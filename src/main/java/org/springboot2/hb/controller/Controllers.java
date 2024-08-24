@@ -21,13 +21,13 @@ public class Controllers {
     @Autowired
     ContactService contactService;
 
-    @GetMapping(value = "/contacts",produces = MediaType.APPLICATION_JSON_VALUE)
+    @GetMapping(value = "/contacts", produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<List<Contact>> getContacts() {
         List<Contact> contacts = contactService.getAll();
         return new ResponseEntity<>(contacts, HttpStatus.OK);
     }
 
-    @GetMapping(value = "/patients",produces = MediaType.APPLICATION_JSON_VALUE)
+    @GetMapping(value = "/patients", produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<List<Patient>> getPatients() {
         List<Patient> patients = patientService.getAll();
         return new ResponseEntity<>(patients, HttpStatus.OK);

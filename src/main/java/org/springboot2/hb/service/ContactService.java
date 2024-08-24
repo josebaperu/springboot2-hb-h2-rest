@@ -14,8 +14,9 @@ public class ContactService {
 
     @Autowired
     private ContactRepository contactRepository;
+
     @Transactional(readOnly = true)
-        public List<Contact> getAll() {
-            return  contactRepository.findAll();
-        }
+    public List<Contact> getAll() {
+        return contactRepository.findAll();
+    }
 }

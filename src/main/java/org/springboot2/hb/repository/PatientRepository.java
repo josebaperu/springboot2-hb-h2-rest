@@ -1,4 +1,5 @@
 package org.springboot2.hb.repository;
+
 import org.springboot2.hb.entity.Patient;
 import org.springframework.data.jpa.repository.JpaRepository;
 

@@ -13,8 +13,9 @@ public class PatientService {
 
     @Autowired
     private PatientRepository patientRepository;
+
     @Transactional(readOnly = true)
-        public List<Patient> getAll(){
-            return  patientRepository.findAll();
-        }
+    public List<Patient> getAll() {
+        return patientRepository.findAll();
+    }
 }
