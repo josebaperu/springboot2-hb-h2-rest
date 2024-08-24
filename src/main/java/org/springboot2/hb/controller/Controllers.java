@@ -4,6 +4,7 @@ import org.springboot2.hb.entity.Contact;
 import org.springboot2.hb.entity.Patient;
 import org.springboot2.hb.service.ContactService;
 import org.springboot2.hb.service.PatientService;
+import org.springboot2.hb.service.ProjectionsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
@@ -21,8 +22,12 @@ public class Controllers {
     @Autowired
     ContactService contactService;
 
+    @Autowired
+    ProjectionsService projectionsService;
+
     @GetMapping(value = "/contacts", produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<List<Contact>> getContacts() {
+        projectionsService.getPatient();
         List<Contact> contacts = contactService.getAll();
         return new ResponseEntity<>(contacts, HttpStatus.OK);
     }
